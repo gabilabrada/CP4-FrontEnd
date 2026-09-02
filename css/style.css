@@ -281,9 +281,9 @@ footer{
 
 .redes-footer {
     display: grid;
-    grid-template-columns: repeat(2, 40px);
+    grid-template-columns: repeat(2, 50px);
     align-content: start;
-    gap: 12px;
+    gap: 15px;
 }
 
 .redes-footer h2{
@@ -291,14 +291,22 @@ footer{
     white-space: nowrap;
 }
 
-.redes-footer img{
+.icone-rede {
     width: 40px;
     height: 40px;
-    object-fit: contain;
-    border: 1px solid var(--texto-principal);
+    border: 0.5px solid var(--texto-secundario);
     border-radius: 50%;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.icone-rede img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
 }
 
 .footer-final{
