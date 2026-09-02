@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --fundo-preto: #111111;
+    --fundo-preto: #121212;
     --fundo-off: #fff3ef;
     --botao: #b4aaa3;
     --texto-principal: white;
     --texto-secundario: rgb(138, 138, 138);
+    --cor-adicional: rgb(115, 208, 247);
 }
 
 * {
@@ -40,6 +41,11 @@
     color: var(--texto-principal);
     text-decoration: none;
     font-weight: 200;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover{
+    color: var(--cor-adicional);
 }
 
 #inicio{
@@ -94,9 +100,16 @@
     border-radius: 30px;
     background-color: var(--botao);
     font-weight: bold;
-    justify-self: start
+    justify-self: start;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
+.botao:hover{
+    background-color: var(--cor-adicional);
+    transform: translateY(-5px);
+}
 
 /* Parte 2 */
 .img {
@@ -135,41 +148,81 @@
 
 #depoimentos {
     background-color: var(--fundo-preto);
+    padding: 60px 11% 70px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto auto;
+    column-gap: 60px;
+    row-gap: 25px;
+    align-items: center;
 
     h1{
         color: var(--texto-principal);
-        font-weight: 500;
-        margin-left: 70%;
-        padding: 50px;
-    }
-
-    p{
-        color: black;
-        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.2;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        align-self: start;
+        margin: 0 0 10px;
+        padding-left: 0;
     }
 }
 
 .card {
-    background-color: var(--texto-principal);
-    width: 500px;
-    padding: 25px;
+    background-color: var(--fundo-off);
+    box-sizing: border-box;
+    width: 450px;
+    padding: 48px 30px 26px;
     border-radius: 25px;
     position: relative;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-20px);
 }
 
 .card img {
     border: solid 3px var(--fundo-preto);
-    width: 70px;
-    height: 70px;
+    box-sizing: border-box;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     position: absolute;
     object-fit: cover;
-    top: -27px;
+    top: -32px;
     left: 50%;
+    transform: translateX(-50%);
 }
 
 .card p{
-    padding-top: 35px;
+    color: black;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+.user-1 {
+    grid-column: 1;
+    grid-row: 2;
+
+    img {
+        object-position: center top;
+    }
+}
+
+.user-2 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.user-3 {
+    grid-column: 1;
+    grid-row: 4;
 }
 
 footer{
@@ -188,6 +241,11 @@ footer{
 .menu-footer{
     display: grid;
     gap: 8px;
+    transform: color 0.3s ease;
+}
+
+.menu-footer a:hover{
+    color: var(--cor-adicional);
 }
 
 .checkpoint-footer,
