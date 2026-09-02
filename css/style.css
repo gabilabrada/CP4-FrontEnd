@@ -18,6 +18,10 @@
     width: 100%;
     background-color: var(--fundo-preto);
     color: var(--texto-principal);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .conteudo-header{
@@ -51,7 +55,7 @@
 #inicio{
     background-color: var(--fundo-preto);
     color: var(--texto-principal);
-    padding: 20px 20px 60px 20px;
+    padding: 130px 20px 60px 20px;
 }
 
 .grid-container {
