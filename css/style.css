@@ -13,6 +13,8 @@
     font-family: 'Poppins';
 }
 
+html 
+
 /* Parte 1 - Navegação*/
 .topo-navegacao {
     width: 100%;
@@ -110,7 +112,7 @@
 .banner-4 {grid-area: e;}
 
 .botao {
-    padding: 7px 20px;
+    padding: 15px 20px;
     border: none;
     border-radius: 30px;
     background-color: var(--botao);
@@ -131,7 +133,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 7px ;
+    border-radius: 7px;
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 #galeria {
@@ -141,6 +144,10 @@
     gap: 15px;
     grid-template-rows: repeat(2, 300px);
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+.img:hover {
+    transform: scale(1.08);
 }
 
 .sea-1 {
@@ -345,30 +352,40 @@ footer{
 }
 
 @media(max-width: 600px) {
+
+    /* Seção - 1 */
     .topo-navegacao {
         display: none;
     }
 
     #inicio {
+        width: 100%;
         padding: 40px 20px;
     }
     .grid-container {
-        
+        width: 100%;
+        max-width: none;
         display: grid;
-        grid-template-rows: 1.6fr repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
         "a a a"
         "b b b"
         "c d e" ;
+        gap: 15px;
+        grid-template-rows: 300px auto auto;
     }
 
-    .banner-1 {grid-area: a;}
+    .banner-1 {
+        grid-area: a;
+        width: 100%;
+        height: 100%;
+    }
 
     .texto{
-    grid-area: b;
-    display: grid;
-    align-content: start;
-    gap: 20px;
+        grid-area: b;
+        display: grid;
+        align-content: start;
+        gap: 20px;
     }
 
     .banner-2 {grid-area: c;}
@@ -377,4 +394,35 @@ footer{
 
     .banner-4 {grid-area: e;}
 
+    .img1 {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        display: block;
+    }
+
+    /* ATENÇÃO - Pode tirar isso Gabi, coloquei aqui só pra eu conseguir arrumar a primeira seção e o footer sem sua parte ficar interferindo */
+    #galeria, 
+    #depoimentos {
+        display: none;
+    }
+
+    /* Footer */
+    .container-footer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        pad: 40px 20px;
+        gap: 30px;
+    }
+
+    .footer-final{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-final p:last-child{
+    justify-self: start;
+}
 }
